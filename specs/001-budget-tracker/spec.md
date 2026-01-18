@@ -6,6 +6,16 @@
 **Status**: Draft  
 **Input**: User description: "I want to build a personal budget tracker and analyser. User will upload bank statement for month and then the system needs to extract those using AI and save it and then show the results. I need a monthly view"
 
+## Clarifications
+
+### Session 2026-01-18
+
+- Q: When a user uploads a statement for a month that already exists and chooses “keep existing,” what should happen to the newly uploaded file? → A: Discard the new upload; keep existing data unchanged.
+- Q: For the initial release, how many user accounts should the system support? → A: 2 local users: one admin + one normal.
+- Q: What are the admin-specific capabilities (if any)? → A: No special capabilities; roles are labels only.
+- Q: If AI extraction is partial/ambiguous, what should the system do? → A: Fail the upload; user must retry with a different file.
+- Q: How should the system determine the target month/year for an upload? → A: User selects month/year during upload via dropdown.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Upload and Analyse Statement (Priority: P1)
@@ -55,7 +65,7 @@ A user logs in with a username and password to access their personal dashboard a
 ### Edge Cases
 
 - What happens if the uploaded statement is in an unsupported format?
-- How does the system handle failed AI extraction or ambiguous data?
+- How does the system handle failed AI extraction or ambiguous data? (Upload fails; user must retry with a different file.)
 - What if the user tries to upload a statement for a month that already exists and chooses not to replace?
 - How does the system handle empty or corrupted files?
 - What if the user is inactive for a long period?
@@ -66,10 +76,13 @@ A user logs in with a username and password to access their personal dashboard a
 
 - **FR-001**: System MUST allow users to upload monthly bank statements in common formats (PDF, CSV, XLSX).
 - **FR-002**: System MUST extract transaction data (date, description, amount, credit/debit) from uploaded statements using AI.
+- **FR-002a**: If AI extraction is partial or ambiguous, the system MUST fail the upload and instruct the user to retry with a different file.
+- **FR-002b**: System MUST require the user to select the target month and year during upload via a dropdown.
 - **FR-003**: System MUST save extracted data tagged by user, month, and year.
 - **FR-004**: System MUST display a monthly summary view with stats, charts, and analysis.
-- **FR-005**: System MUST prompt the user if uploading a statement for a month that already exists, allowing replace or keep.
+- **FR-005**: System MUST prompt the user if uploading a statement for a month that already exists, allowing replace or keep; if keep is chosen, the new upload is discarded and existing data remains unchanged.
 - **FR-006**: System MUST provide a login page with username and password authentication (with basic salted password storage).
+- **FR-006a**: Admin role has no special capabilities beyond standard user access in the initial release.
 - **FR-007**: System MUST support a dark and light theme, defaulting to dark mode.
 - **FR-008**: System MUST ensure only authenticated users can access their data and dashboard.
 - **FR-009**: System MUST handle and report errors for unsupported, empty, or corrupted files.
@@ -94,7 +107,7 @@ A user logs in with a username and password to access their personal dashboard a
 
 ## Assumptions
 
-- Only one user account is required for initial release.
+- Initial release supports exactly two local accounts: one admin and one normal user.
 - Supported statement formats are PDF, CSV, and XLSX.
 - AI extraction will use Azure AI Foundry-compatible models.
 - Local storage is sufficient for MVP (no cloud storage required).

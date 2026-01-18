@@ -1,33 +1,27 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version Change: [Template] → 1.0.0
-Rationale: Initial constitution ratification for SmartBudgetTracker personal project
+Version Change: 1.0.0 → 1.1.0
+Rationale: Expand principles to explicitly support lightweight specs and allow technical detail for MVP speed.
 
 Modified Principles:
-- Initial creation with 3 core principles tailored for personal local development
+- Pragmatic Quality (expanded to relax spec rigor and acceptance criteria)
+- Clear Communication (expanded to allow technical detail in specs and lightweight user stories)
 
 Added Sections:
-- Core Principles (3 principles: Local-First Development, Pragmatic Quality, Clear Communication)
-- Development Workflow
-- Governance
+- None
 
 Removed Sections:
-- None (initial creation)
+- None
 
 Templates Requiring Updates:
-- ✅ plan-template.md - already aligned with local development focus
-- ✅ spec-template.md - flexible enough for minimal documentation approach
-- ✅ tasks-template.md - optional testing approach already supported
+- ✅ spec-template.md (updated to reflect lightweight specs)
+- ⚠️ plan-template.md (no change required)
+- ⚠️ tasks-template.md (no change required)
+- ⚠️ checklist-template.md (no change required)
 
 Follow-up TODOs:
-- None - all placeholders filled
-
-Constitution reflects:
-- Personal local development (no deployment/production concerns)
-- Frontend + backend architecture
-- Minimal testing/docs (pragmatic over process)
-- Technical soundness without bureaucracy
+- None
 -->
 
 # SmartBudgetTracker Constitution
@@ -48,16 +42,16 @@ Constitution reflects:
 - README/quickstart for setup and running
 - Tests only when complexity warrants them or when they save time
 
-**SHOULD NOT** create tests or documentation for bureaucracy's sake. User stories, acceptance criteria, and extensive test suites are not required unless specifically requested.
+**SHOULD NOT** create tests or documentation for bureaucracy's sake. User stories and acceptance criteria can be minimal or omitted for early MVP work unless they materially improve implementation clarity.
 
 **Rationale**: For a personal project, over-testing and over-documenting creates friction without value. Code quality matters; process theater does not.
 
 ### III. Clear Communication
 
 **MUST** maintain specification and implementation plan documents that clearly explain WHAT is being built and WHY. Each feature must have:
-- A spec.md explaining the feature's purpose and user scenarios
+- A spec.md explaining the feature's purpose and intended behavior (user stories optional and lightweight)
 - A plan.md outlining technical approach and structure decisions
-- Only the minimal detail needed to execute implementation
+- Only the minimal detail needed to execute implementation, including technical details when they speed development
 
 **SHOULD** keep documents concise and action-oriented. Avoid fluff, theoretical content, or verbose explanations.
 
@@ -68,7 +62,7 @@ Constitution reflects:
 **Architecture**: Frontend + Backend structure. Backend handles business logic and data, frontend provides UI.
 
 **Feature Process**:
-1. Create feature spec (spec.md) - user scenarios and requirements
+1. Create feature spec (spec.md) - purpose, basic behaviors, and optional lightweight user scenarios
 2. Create implementation plan (plan.md) - technical design
 3. Generate task list (tasks.md) - ordered work items
 4. Implement tasks incrementally
@@ -101,4 +95,4 @@ This constitution defines the development approach for SmartBudgetTracker. It pr
 - MINOR: New principles added or existing ones expanded
 - PATCH: Clarifications, wording improvements
 
-**Version**: 1.0.0 | **Ratified**: 2026-01-18 | **Last Amended**: 2026-01-18
+**Version**: 1.1.0 | **Ratified**: 2026-01-18 | **Last Amended**: 2026-01-18
