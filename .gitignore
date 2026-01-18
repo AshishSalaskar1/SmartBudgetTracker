@@ -61,6 +61,10 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
+# DuckDB databases
+*.duckdb
+*.duckdb.wal
+
 # Flask stuff:
 instance/
 .webassets-cache
@@ -131,7 +135,7 @@ __pypackages__/
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
+# SageMath parsed files 
 *.sage.py
 
 # Environments
@@ -198,6 +202,35 @@ cython_debug/
 #  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
 #  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
 #  refer to https://docs.cursor.com/context/ignore-files
+.env*
+node_modules/
+dist/
+build/
+.vite/
+.npm/
+.pnpm-store/
+.yarn/
+.cursorignore
+
+# Node.js / Vite
+node_modules/
+dist/
+build/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
 .cursorignore
 .cursorindexingignore
 
